@@ -3,7 +3,7 @@
     public class TResult<T>
     {
         public bool IsSuccess = true;
-        public T? Value { get; set; }    
+        public T? Value { get; set; }
         public string? ErrorMessage { get; set; }
 
         public TResult()

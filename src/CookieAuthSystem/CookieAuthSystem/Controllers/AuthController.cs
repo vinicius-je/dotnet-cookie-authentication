@@ -33,7 +33,7 @@ namespace CookieAuthSystem.Controllers
             }
 
             var cookie = _cookieService.GenerateCookie(userResult.Value);
-            
+
             await HttpContext.SignInAsync(
                 CookieAuthenticationDefaults.AuthenticationScheme,
                 new ClaimsPrincipal(cookie.Claims),
@@ -53,7 +53,9 @@ namespace CookieAuthSystem.Controllers
         [HttpGet("/logged")]
         public IActionResult Logged()
         {
-            return Ok("User logged");
+            var userName = User.FindFirst(ClaimTypes.Name)?.Value;
+
+            return Ok($"Hello {userName}");
         }
     }
 }

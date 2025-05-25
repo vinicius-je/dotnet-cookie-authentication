@@ -29,6 +29,7 @@ namespace CookieAuthSystem.Application.Features.Login
                 return result;
             }
 
+            result.Success(user);
             return result;
         }
     }

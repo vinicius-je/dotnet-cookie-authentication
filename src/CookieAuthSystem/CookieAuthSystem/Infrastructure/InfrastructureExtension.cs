@@ -1,7 +1,4 @@
-﻿using CookieAuthSystem.Domain.Entities;
-using CookieAuthSystem.Domain.Interfaces;
-using CookieAuthSystem.Infrastructure.Context;
-using CookieAuthSystem.Infrastructure.Repositories;
+﻿using CookieAuthSystem.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 namespace CookieAuthSystem.Infrastructure

@@ -1,6 +1,6 @@
 ﻿using CookieAuthSystem.Domain.Entities;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 
 namespace CookieAuthSystem.Application.Features.Cookie
