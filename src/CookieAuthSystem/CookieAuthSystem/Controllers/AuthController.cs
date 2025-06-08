@@ -39,7 +39,7 @@ namespace CookieAuthSystem.Controllers
                 new ClaimsPrincipal(cookie.Claims),
                 cookie.Properties);
 
-            return LocalRedirect("/logged");
+            return LocalRedirect("/auth/logged");
         }
 
         [HttpPost("logout")]
@@ -48,9 +48,15 @@ namespace CookieAuthSystem.Controllers
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
             return Ok("User Logout Successful");
         }
+        
+        [HttpGet("access-denied")]
+        public IActionResult NotAllowed()
+        {
+            return Unauthorized("You not allowed to access this resource");
+        }
 
         [Authorize]
-        [HttpGet("/logged")]
+        [HttpGet("logged")]
         public IActionResult Logged()
         {
             var userName = User.FindFirst(ClaimTypes.Name)?.Value;

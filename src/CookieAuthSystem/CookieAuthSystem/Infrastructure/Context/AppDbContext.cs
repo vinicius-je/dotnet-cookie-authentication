@@ -20,7 +20,7 @@ namespace CookieAuthSystem.Infrastructure.Context
                 .HasMany(u => u.Roles)
                 .WithMany(r => r.Users)
                 .UsingEntity<Dictionary<string, object>>(
-                    "UserRoles", // 👈 Custom table name
+                    "UserRoles",
                     j => j.HasOne<Role>().WithMany().HasForeignKey("RoleId"),
                     j => j.HasOne<User>().WithMany().HasForeignKey("UserId"),
                     j =>
